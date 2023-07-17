@@ -133,8 +133,9 @@ function Monument7() {
             target="blank"
             title="3D MODEL"
           >
-            {' '}
+            <span class="model__text">{' '}
             Click Here to Show 3D Model{' '}
+            </span>
           </a>
         </div>
 

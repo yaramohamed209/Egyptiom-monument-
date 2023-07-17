@@ -16,8 +16,17 @@ import {
   Monument7,
   Monument5,
   Events,
+  Book2,
+  Payment,
+  Book3,
+  Roadmap,
   
 } from "./components";
+import Book from "./components/Book";
+import Getticket from "./components/Getticket";
+import Login from "./components/Login";
+import Panorama from "./components/Roadmap";
+// import TicketButton from './components/TicketButton';
 
 ReactDOM.render(
   <Router>
@@ -32,7 +41,16 @@ ReactDOM.render(
       <Route path="/monument5" element={<Monument5 />} />
       <Route path="/monument6" element={<Monument6 />} />
       <Route path="/monument7" element={<Monument7 />} />
-      <Route path="/events" element={<Events />} />  
+      <Route path="/events" element={<Events />} /> 
+      {/* <Route path="/TicketButton" element={<TicketButton />} /> */}
+      <Route path="/Book" element={<Book />} />  
+      <Route path="/Book2" element={<Book2 />} />
+      <Route path="/Book3" element={<Book3 />} />   
+      <Route path="/Getticket" element={<Getticket />} />  
+      <Route path="/Login" element={<Login />} />  
+      <Route path="/Payment" element={<Payment />} />
+      <Route path="/Roadmap" element={<Roadmap />}/>
+
     </Routes>
     <Footer />
   </Router>,
@@ -40,4 +58,3 @@ ReactDOM.render(
 
   document.getElementById('root')
 );
-

@@ -123,22 +123,22 @@ function Monuments() {
 
         <div id="temp"></div>
         <div class="more">
-          <div class="card">
+          <div class="card5">
             <div class="content">
               <img className="A1" src="/images/kaaba/k2.jpg" alt="" />
             </div>
           </div>
-          <div class="card">
+          <div class="card5">
             <div class="content">
               <img className="A1" src="/images/kaaba/k3.jpg" alt="" />
             </div>
           </div>
-          <div class="card">
+          <div class="card5">
             <div class="content">
               <img className="A1"src="/images/kaaba/k4.jpg" alt="" />
             </div>
           </div>
-          <div class="card">
+          <div class="card5">
             <div class="content">
               <img className="A1"src="/images/kaaba/k5.jpg" alt="" />
             </div>

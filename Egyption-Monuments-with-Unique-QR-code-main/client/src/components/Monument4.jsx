@@ -123,22 +123,22 @@ function Monument4() {
 
         <div id="temp"></div>
         <div class="more">
-          <div class="card">
+          <div class="card5">
             <div class="content">
               <img class="A1" src="/images/Cosmatics/C2.jpg" alt="" />
             </div>
           </div>
-          <div class="card">
+          <div class="card5">
             <div class="content">
               <img class="A1" src="/images/Cosmatics/C3.jpg" alt="" />
             </div>
           </div>
-          <div class="card">
+          <div class="card5">
             <div class="content">
               <img class="A1" src="/images/Cosmatics/C4.jpg" alt="" />
             </div>
           </div>
-          <div class="card">
+          <div class="card5">
             <div class="content">
               <img class="A1" src="/images/Cosmatics/C5.jpg" alt="" />
             </div>

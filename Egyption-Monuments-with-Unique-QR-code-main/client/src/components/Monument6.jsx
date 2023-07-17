@@ -123,22 +123,22 @@ function Monument6() {
 
         <div id="temp"></div>
         <div class="more">
-          <div class="card">
+          <div class="card5">
             <div class="content">
               <img class="A1" src="/images/Chair/CH2.jpg" alt="" />
             </div>
           </div>
-          <div class="card">
+          <div class="card5">
             <div class="content">
               <img class="A1" src="/images/Chair/CH3.jpg" alt="" />
             </div>
           </div>
-          <div class="card">
+          <div class="card5">
             <div class="content">
               <img class="A1" src="/images/Chair/CH4.jpg" alt="" />
             </div>
           </div>
-          <div class="card">
+          <div class="card5">
             <div class="content">
               <img class="A1" src="/images/Chair/CH5.jpg" alt="" />
             </div>

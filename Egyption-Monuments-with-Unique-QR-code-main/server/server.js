@@ -1,72 +1,38 @@
-const express = require('express');
-const mysql = require('mysql');
-const cors = require('cors');
+import express from 'express';
+import  Path from 'path'
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import seedRouter from './routes/seedRoutes.js'; 
+import preventSleep from './preventSleep.cjs'
+import monumentRouter from './routes/monumentRoutes.js';
+dotenv.config();
+
+  mongoose
+  .connect(process.env.MONGODB_URL)
+  .then(() => {
+    console.log('connected to db');
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
+
 const app = express();
-app.use(cors());
-app.use(express.json());
+app.use('/api/seed', seedRouter);
+app.use('/api/monuments', monumentRouter);
 
 
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'graduation',
-});
+const __dirname = Path.resolve();
+app.use(express.static(Path.join(__dirname, '../client/build')));
+app.get('*', (req, res) =>
+  res.sendFile(Path.join(__dirname, '../client/build/index.html'))
+);
+const PORT = 6000; 
+ const server = app.listen(PORT ,()=> {
+  console.log(`listening on port ${PORT}`);
+  preventSleep.preventSleep();
+ });
 
-app.post('/graduation', (req, res) => {
-  const eventSql = "INSERT INTO events (`eventname`, `qrcodes`, `price`, `date`, `time`, `email`, `picture`) VALUES (?,?,?,?,?,?,?)";
-  const bookSql = "INSERT INTO booking (`username`, `email`, `tickets`) VALUES (?, ?, ?)";
-
-  const eventValues = [
-    req.body.eventname,
-    req.body.qrcodes,
-    req.body.price,
-    req.body.date,
-    req.body.time,
-    req.body.email,
-    req.body.picture
-  ];
-  const bookValues = [
-    req.body.username,
-    req.body.email,
-    req.body.tickets
-  ];
-  
-  db.query(eventSql, eventValues, (eventErr, eventData) => {
-    if (eventErr) {
-      return res.json(eventErr);
-    }
-});
-  db.query(bookSql, bookValues, (bookErr, bookData) => {
-      if (bookErr) {
-        return res.json(bookErr);
-      }
-    });
- 
-});
-
-app.get('/graduation', (req, res) => {
-  const sql = "SELECT number FROM tickets";
-  db.query (sql,(err, data) => {   
-    if (err) {
-      return res.json(err);
-    }
-    else if (data)
-    return res.json(data);
-  });
-});
-
-app.get('/graduation/booking', (req, res) => {
-  const sql2 = "SELECT tickets FROM booking";
-  db.query (sql2,(err, data) => {   
-    if (err) {
-      return res.json(err);
-    }
-    else if (data)
-    return res.json(data);
-  });
-});
-
-app.listen(8081, () => {
-  console.log("Listening on port 8081...");
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log(`server at http://localhost:${port}`);
 });

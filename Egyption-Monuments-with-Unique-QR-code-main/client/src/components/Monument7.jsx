@@ -49,15 +49,23 @@ function Monument7() {
     <div className="app">
       <div class="col-lg-7">
         <img
-          width={350}
-          height={350}
+          width={330}
+          height={330}
           class="img-fluid rounded mb-4 mb-lg-0"
           src={data.Monuments[7].image}
           alt=""
         />
       </div>
-      <center style={{height:"670px"}}>
+      <center>
         <div id="root"></div>
+        {/* from ({from}):
+      <select onChange={(e) => setFrom(e.target.value)}>
+        {options.map((opt) => (
+          <option key={opt.code} value={opt.code}>
+            {opt.name}
+          </option>
+        ))}
+      </select> */}
         <div class="choose">Choose Language ({to}) :</div>
         <select
           onChange={(e) => setTo(e.target.value)}
@@ -74,6 +82,7 @@ function Monument7() {
           {data.Monuments[0].description}
         </textarea> */}
         </div>
+
         <div>
           <textarea
             rows={6}
@@ -93,6 +102,7 @@ function Monument7() {
           </div>
           <select id="speakerMenu"></select>
         </div>
+
         <div class="uiunit_none">
           <label for="rateFld">Speed: </label>
           <input
@@ -112,7 +122,11 @@ function Monument7() {
             </span>
           </button>
         </div>
-        {/* -------------------3d------------------------------ */}
+
+        {/* <div>
+          <script type="module" src="main.js"></script>
+          <a href="./public/index.html">click</a>
+        </div> */}
         <div class="model">
           <a
             href="https://model-o0wn.onrender.com/"
@@ -122,6 +136,12 @@ function Monument7() {
             {' '}
             Click Here to Show 3D Model{' '}
           </a>
+        </div>
+
+        <div id="temp"></div>
+
+        <div class="uiunit">
+          <select id="languageMenu"></select>
         </div>
       </center>
     </div>

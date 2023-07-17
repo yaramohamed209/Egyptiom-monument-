@@ -56,7 +56,7 @@ function Monument7() {
           alt=""
         />
       </div>
-      <center>
+      <center style={{height:"770px"}}>
         <div id="root"></div>
         {/* from ({from}):
       <select onChange={(e) => setFrom(e.target.value)}>
